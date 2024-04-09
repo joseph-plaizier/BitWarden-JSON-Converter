@@ -1,8 +1,5 @@
 using Microsoft.VisualBasic;
-<<<<<<< HEAD
-=======
 using System.Text.Json;
->>>>>>> app
 
 namespace BitWarden_JSON
 {
@@ -56,18 +53,11 @@ namespace BitWarden_JSON
         {
             //save the selected path
             string filePath = textBox1.Text;
-<<<<<<< HEAD
-
-            //check if it's a directory or a file
-            //create a new file attributes variable type
-            try
-            {
-=======
             
             try
             {
                 //create a new file attributes variable type
->>>>>>> app
+
                 FileAttributes attributes = File.GetAttributes(filePath);
 
                 //check if it's a directory or a file
@@ -76,42 +66,7 @@ namespace BitWarden_JSON
                     //it's a directory
                     throw new Exception("Not a .json file. Try again.");
                 }
-<<<<<<< HEAD
-            
-            //check if it's a directory or a file
-            switch(attributes)
-            {
-                    case FileAttributes.Directory  : //it's a directory
-                                                                               //check if it exists
-                        MessageBox.Show(filePath, "Directory", MessageBoxButtons.OK);
-                        if (Directory.Exists(filePath))
-                        {
-                            //throw new Exception("Not a file. Try again.");
-                            MessageBox.Show(filePath, "Directory", MessageBoxButtons.OK);
-                        }
-                        //else
-                        //{
-                        //    MessageBox.Show(filePath, "File Content at path: " + filePath, MessageBoxButtons.OK);
 
-                       // }
-                        //no directories are supported
-                        
-                    break;
-                default: //it's a file
-                    //check if it exists
-                    if (File.Exists(filePath))
-                    {
-                        MessageBox.Show(attributes.ToString(), "File Content at path: " + filePath, MessageBoxButtons.OK);
-                     
-                    }
-                    else
-                    {
-                        MessageBox.Show(attributes.ToString(), "File Content at path: " + filePath, MessageBoxButtons.OK);
-                       
-                    }
-                    break;
-            }
-=======
                 else //not a directory, must be a file
                 {
                     //check if it's a .json file
@@ -121,7 +76,7 @@ namespace BitWarden_JSON
                     }
                 }
                 MessageBox.Show(attributes.ToString(), "File Content at path: " + filePath, MessageBoxButtons.OK);
->>>>>>> app
+
             }
             catch (FileNotFoundException ex)
             {
@@ -132,8 +87,6 @@ namespace BitWarden_JSON
                 MessageBox.Show(ex.Message, "Not a .json file", MessageBoxButtons.OK);
             }
 
-<<<<<<< HEAD
-=======
             //VS2022 creates JSON Classes for you.
             //Highlight JSON, create a new class, delete template code,
             //Edit -> Paste Special -> As JSON
@@ -153,8 +106,6 @@ namespace BitWarden_JSON
             //output information
             MessageBox.Show(bitWarden?.encrypted.ToString(), "encrypted", MessageBoxButtons.OK);
             
-
->>>>>>> app
         }
     }
 }

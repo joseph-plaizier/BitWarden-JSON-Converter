@@ -98,15 +98,12 @@
             // 
             // Form1
             // 
-<<<<<<< HEAD
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-=======
+
             AcceptButton = OK;
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = button2;
->>>>>>> app
+
             ClientSize = new Size(800, 310);
             Controls.Add(OK);
             Controls.Add(button2);

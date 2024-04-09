@@ -14,3 +14,4 @@ Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows
 Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows\BitWarden JSON.pdb
 Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows\BitWarden JSON.genruntimeconfig.cache
 Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows\ref\BitWarden JSON.dll
+Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows\BitWarden JSON.sourcelink.json

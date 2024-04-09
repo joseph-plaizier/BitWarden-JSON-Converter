@@ -1,0 +1,16 @@
+Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\bin\Debug\net8.0-windows\BitWarden JSON.exe
+Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\bin\Debug\net8.0-windows\BitWarden JSON.deps.json
+Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\bin\Debug\net8.0-windows\BitWarden JSON.runtimeconfig.json
+Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\bin\Debug\net8.0-windows\BitWarden JSON.dll
+Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\bin\Debug\net8.0-windows\BitWarden JSON.pdb
+Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows\BitWarden_JSON.Form1.resources
+Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows\BitWarden JSON.csproj.GenerateResource.cache
+Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows\BitWarden JSON.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows\BitWarden JSON.AssemblyInfoInputs.cache
+Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows\BitWarden JSON.AssemblyInfo.cs
+Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows\BitWarden JSON.csproj.CoreCompileInputs.cache
+Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows\BitWarden JSON.dll
+Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows\refint\BitWarden JSON.dll
+Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows\BitWarden JSON.pdb
+Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows\BitWarden JSON.genruntimeconfig.cache
+Z:\Projects\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows\ref\BitWarden JSON.dll

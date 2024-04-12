@@ -27,16 +27,8 @@ namespace BitWarden_JSON
                     //Get the path of specified file
                     filePath = openFileDialog.FileName;
 
-                    //Read the contents of the file into a stream
-                    //var fileStream = openFileDialog.OpenFile();
-
                     //update the text box with the file path
                     textBox1.Text = filePath;
-
-                    //using (StreamReader reader = new StreamReader(fileStream))
-                    //{
-                    //    fileContent = reader.ReadToEnd();
-                    //}
                 }
             }
 
@@ -75,7 +67,7 @@ namespace BitWarden_JSON
                         throw new Exception("File is not a .json file.  Please try again.");
                     }
                 }
-                MessageBox.Show(attributes.ToString(), "File Content at path: " + filePath, MessageBoxButtons.OK);
+                //MessageBox.Show(attributes.ToString(), "File Content at path: " + filePath, MessageBoxButtons.OK);
 
             }
             catch (FileNotFoundException ex)
@@ -104,8 +96,18 @@ namespace BitWarden_JSON
             Rootobject? bitWarden = JsonSerializer.Deserialize<Rootobject>(file);
 
             //output information
-            MessageBox.Show(bitWarden?.encrypted.ToString(), "encrypted", MessageBoxButtons.OK);
+            //MessageBox.Show(bitWarden?.encrypted.ToString(), "encrypted", MessageBoxButtons.OK);
+            for(int i =0; i< bitWarden.items.Count(); i++)
+            {
+                Console.WriteLine(bitWarden.items[i]);
+            }
             
+            Results f2 = new Results(bitWarden);
+            
+            f2.DataContext = f2;
+            f2.ShowDialog();
+            
+
         }
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BitWarden JSON")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff49ae91e1169f4eacfbaa443004a849c55b3214")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e25bd41a2c6147e63da04e82f157b2d061ba98b2")]
 [assembly: System.Reflection.AssemblyProductAttribute("BitWarden JSON")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BitWarden JSON")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

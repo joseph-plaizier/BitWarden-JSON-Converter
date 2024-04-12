@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{565EC935-7A0E-43CE-A8F3-8ED9D5B3058D}|BitWarden JSON\\BitWarden JSON.csproj|z:\\projects\\visual studio\\bitwarden json\\bitwarden json\\results.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{565EC935-7A0E-43CE-A8F3-8ED9D5B3058D}|BitWarden JSON\\BitWarden JSON.csproj|solutionrelative:bitwarden json\\results.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{565EC935-7A0E-43CE-A8F3-8ED9D5B3058D}|BitWarden JSON\\BitWarden JSON.csproj|z:\\projects\\visual studio\\bitwarden json\\bitwarden json\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{565EC935-7A0E-43CE-A8F3-8ED9D5B3058D}|BitWarden JSON\\BitWarden JSON.csproj|solutionrelative:bitwarden json\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,6 +17,26 @@
     {
       "AbsoluteMoniker": "D:0:0:{565EC935-7A0E-43CE-A8F3-8ED9D5B3058D}|BitWarden JSON\\BitWarden JSON.csproj|Z:\\Projects\\Visual Studio\\BitWarden JSON\\bitwarden json\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{565EC935-7A0E-43CE-A8F3-8ED9D5B3058D}|BitWarden JSON\\BitWarden JSON.csproj|solutionrelative:bitwarden json\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{565EC935-7A0E-43CE-A8F3-8ED9D5B3058D}|BitWarden JSON\\BitWarden JSON.csproj|Z:\\Projects\\Visual Studio\\BitWarden JSON\\bitwarden json\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{565EC935-7A0E-43CE-A8F3-8ED9D5B3058D}|BitWarden JSON\\BitWarden JSON.csproj|solutionrelative:bitwarden json\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{565EC935-7A0E-43CE-A8F3-8ED9D5B3058D}|BitWarden JSON\\BitWarden JSON.csproj|z:\\projects\\visual studio\\bitwarden json\\bitwarden json\\results.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{565EC935-7A0E-43CE-A8F3-8ED9D5B3058D}|BitWarden JSON\\BitWarden JSON.csproj|solutionrelative:bitwarden json\\results.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{565EC935-7A0E-43CE-A8F3-8ED9D5B3058D}|BitWarden JSON\\BitWarden JSON.csproj|z:\\projects\\visual studio\\bitwarden json\\bitwarden json\\results.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{565EC935-7A0E-43CE-A8F3-8ED9D5B3058D}|BitWarden JSON\\BitWarden JSON.csproj|solutionrelative:bitwarden json\\results.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{565EC935-7A0E-43CE-A8F3-8ED9D5B3058D}|BitWarden JSON\\BitWarden JSON.csproj|Z:\\Projects\\Visual Studio\\BitWarden JSON\\bitwarden json\\bitwarden.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{565EC935-7A0E-43CE-A8F3-8ED9D5B3058D}|BitWarden JSON\\BitWarden JSON.csproj|solutionrelative:bitwarden json\\bitwarden.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{565EC935-7A0E-43CE-A8F3-8ED9D5B3058D}|BitWarden JSON\\BitWarden JSON.csproj|z:\\projects\\visual studio\\bitwarden json\\bitwarden json\\results.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{565EC935-7A0E-43CE-A8F3-8ED9D5B3058D}|BitWarden JSON\\BitWarden JSON.csproj|solutionrelative:bitwarden json\\results.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,48 +46,127 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Results.cs",
+              "DocumentMoniker": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Results.cs",
+              "RelativeDocumentMoniker": "BitWarden JSON\\Results.cs",
+              "ToolTip": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Results.cs",
+              "RelativeToolTip": "BitWarden JSON\\Results.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAWwBIAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T22:59:50.391Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Form1.cs",
+              "RelativeDocumentMoniker": "BitWarden JSON\\Form1.cs",
+              "ToolTip": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Form1.cs",
+              "RelativeToolTip": "BitWarden JSON\\Form1.cs",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAgwGsAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T18:36:57.666Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "BitWarden JSON\\Form1.Designer.cs",
-              "ToolTip": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Form1.Designer.cs",
-              "RelativeToolTip": "BitWarden JSON\\Form1.Designer.cs",
-              "ViewState": "AQIAAFUAAAAAAAAAAAAWwGkAAAAAAAAA",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Program.cs",
+              "RelativeDocumentMoniker": "BitWarden JSON\\Program.cs",
+              "ToolTip": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Program.cs",
+              "RelativeToolTip": "BitWarden JSON\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-09T18:36:47.678Z",
+              "WhenOpened": "2024-04-12T22:13:25.689Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Form1.cs",
-              "RelativeDocumentMoniker": "BitWarden JSON\\Form1.cs",
-              "ToolTip": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Form1.cs",
-              "RelativeToolTip": "BitWarden JSON\\Form1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGsAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-09T18:36:57.666Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Form1.cs",
               "RelativeDocumentMoniker": "BitWarden JSON\\Form1.cs",
               "ToolTip": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Form1.cs [Design]",
               "RelativeToolTip": "BitWarden JSON\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-09T18:30:25.328Z"
+              "WhenOpened": "2024-04-09T18:30:25.328Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "BitWarden JSON\\Form1.Designer.cs",
+              "ToolTip": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Form1.Designer.cs",
+              "RelativeToolTip": "BitWarden JSON\\Form1.Designer.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAAGkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T18:36:47.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Results.cs [Design]",
+              "DocumentMoniker": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Results.cs",
+              "RelativeDocumentMoniker": "BitWarden JSON\\Results.cs",
+              "ToolTip": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Results.cs [Design]",
+              "RelativeToolTip": "BitWarden JSON\\Results.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T22:26:27.683Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Results.Designer.cs",
+              "DocumentMoniker": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Results.Designer.cs",
+              "RelativeDocumentMoniker": "BitWarden JSON\\Results.Designer.cs",
+              "ToolTip": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Results.Designer.cs",
+              "RelativeToolTip": "BitWarden JSON\\Results.Designer.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAWwMsAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T22:57:53.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BitWarden.cs",
+              "DocumentMoniker": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\BitWarden.cs",
+              "RelativeDocumentMoniker": "BitWarden JSON\\BitWarden.cs",
+              "ToolTip": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\BitWarden.cs",
+              "RelativeToolTip": "BitWarden JSON\\BitWarden.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T22:11:15.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Results.resx",
+              "DocumentMoniker": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Results.resx",
+              "RelativeDocumentMoniker": "BitWarden JSON\\Results.resx",
+              "ToolTip": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\Results.resx",
+              "RelativeToolTip": "BitWarden JSON\\Results.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-04-12T22:57:58.206Z",
+              "EditorCaption": ""
             }
           ]
         }

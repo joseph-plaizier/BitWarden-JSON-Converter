@@ -52,6 +52,7 @@
             identityBindingSource = new BindingSource(components);
             dataGridView2 = new DataGridView();
             securenoteBindingSource = new BindingSource(components);
+            Columns = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itemBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)loginBindingSource).BeginInit();
@@ -251,11 +252,22 @@
             // 
             securenoteBindingSource.DataSource = typeof(Securenote);
             // 
+            // Columns
+            // 
+            Columns.Location = new Point(1078, 83);
+            Columns.Name = "Columns";
+            Columns.Size = new Size(127, 65);
+            Columns.TabIndex = 2;
+            Columns.Text = "Hide Columns";
+            Columns.UseVisualStyleBackColor = true;
+            Columns.Click += Columns_Click;
+            // 
             // Results
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1082, 593);
+            ClientSize = new Size(1234, 753);
+            Controls.Add(Columns);
             Controls.Add(dataGridView2);
             Controls.Add(dataGridView1);
             Name = "Results";
@@ -296,5 +308,6 @@
         private BindingSource identityBindingSource;
         private DataGridView dataGridView2;
         private BindingSource securenoteBindingSource;
+        private Button Columns;
     }
 }

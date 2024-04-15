@@ -34,3 +34,4 @@ Z:\Projects\Coding\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-
 Z:\Projects\Coding\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows\BitWarden JSON.pdb
 Z:\Projects\Coding\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows\BitWarden JSON.genruntimeconfig.cache
 Z:\Projects\Coding\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows\ref\BitWarden JSON.dll
+Z:\Projects\Coding\Visual Studio\BitWarden JSON\BitWarden JSON\obj\Debug\net8.0-windows\BitWarden_JSON.Hide_Columns.resources

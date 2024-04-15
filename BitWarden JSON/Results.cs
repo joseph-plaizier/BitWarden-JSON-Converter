@@ -19,32 +19,34 @@ namespace BitWarden_JSON
             InitializeComponent();
             this.bitwarden = bitwarden;
 
+            //add items from JSON to data grid
             dataGridView1.DataSource = bitwarden.items;
             dataGridView2.DataContext = bitwarden;
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //when a cell is selected, pull the necessary information to the other data grids
             //determine the type selected
-            
+
             //Cell 6 has type
             //int type = 6;
             //int.Parse(dataGridView1.CurrentRow.Cells[6].Value.ToString());
-            
+
             //get the ID
             string id = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             //MessageBox.Show(id.ToString(), "Test", MessageBoxButtons.OK);
 
             //search through the items object to find the matching ID
-            foreach(Item entry in bitwarden.items)
+            foreach (Item entry in bitwarden.items)
             {
                 if (entry.id.ToString() == id)
                 {
                     //determine the type
                     //1 = Login; 2 = SecureNote ; 3 = Card ; 4 = Identity
                     int type = entry.type;
-                    if(type == 1) //login
+                    if (type == 1) //login
                     {
                         //get the login info and display it in datagridview2
                         bindingsource.DataSource = entry.login;
@@ -53,7 +55,7 @@ namespace BitWarden_JSON
                     }
                     else if (type == 2) //secure note
                     {
-                        
+
                         bindingsource.DataSource = entry.secureNote;
                         dataGridView2.DataSource = bindingsource;
                         //MessageBox.Show(entry.secureNote.ToString(), "Test", MessageBoxButtons.OK);
@@ -77,6 +79,17 @@ namespace BitWarden_JSON
 
             //Cell 12 has Secure Note
             //dataGridView2.DataSource = securenote;
+        }
+
+        private void Columns_Click(object sender, EventArgs e)
+        {
+            //when Hide Columns button is pressed...
+            //create the dialog box window
+            Hide_Columns hideCol = new Hide_Columns(bitwarden);
+
+            hideCol.ShowDialog();
+            //populate the columns available (seen or unseen) from the data grid
+            
         }
     }
 }

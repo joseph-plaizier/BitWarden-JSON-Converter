@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             dataGridView1 = new DataGridView();
-            itemBindingSource = new BindingSource(components);
             revisionDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             creationDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             deletedDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -46,25 +45,40 @@
             identityDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             cardDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             loginDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            itemBindingSource = new BindingSource(components);
+            loginBindingSource = new BindingSource(components);
+            cardBindingSource = new BindingSource(components);
+            rootobjectBindingSource = new BindingSource(components);
+            identityBindingSource = new BindingSource(components);
+            dataGridView2 = new DataGridView();
+            securenoteBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itemBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)loginBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cardBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)rootobjectBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)identityBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)securenoteBindingSource).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { revisionDateDataGridViewTextBoxColumn, creationDateDataGridViewTextBoxColumn, deletedDateDataGridViewTextBoxColumn, idDataGridViewTextBoxColumn, organizationIdDataGridViewTextBoxColumn, folderIdDataGridViewTextBoxColumn, typeDataGridViewTextBoxColumn, repromptDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, notesDataGridViewTextBoxColumn, favoriteDataGridViewCheckBoxColumn, secureNoteDataGridViewTextBoxColumn, identityDataGridViewTextBoxColumn, cardDataGridViewTextBoxColumn, loginDataGridViewTextBoxColumn });
             dataGridView1.DataSource = itemBindingSource;
             dataGridView1.Location = new Point(35, 48);
+            dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1015, 327);
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(1015, 255);
             dataGridView1.TabIndex = 0;
-            // 
-            // itemBindingSource
-            // 
-            itemBindingSource.DataSource = typeof(Item);
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // revisionDateDataGridViewTextBoxColumn
             // 
@@ -72,6 +86,7 @@
             revisionDateDataGridViewTextBoxColumn.HeaderText = "revisionDate";
             revisionDateDataGridViewTextBoxColumn.MinimumWidth = 8;
             revisionDateDataGridViewTextBoxColumn.Name = "revisionDateDataGridViewTextBoxColumn";
+            revisionDateDataGridViewTextBoxColumn.ReadOnly = true;
             revisionDateDataGridViewTextBoxColumn.Width = 150;
             // 
             // creationDateDataGridViewTextBoxColumn
@@ -80,6 +95,7 @@
             creationDateDataGridViewTextBoxColumn.HeaderText = "creationDate";
             creationDateDataGridViewTextBoxColumn.MinimumWidth = 8;
             creationDateDataGridViewTextBoxColumn.Name = "creationDateDataGridViewTextBoxColumn";
+            creationDateDataGridViewTextBoxColumn.ReadOnly = true;
             creationDateDataGridViewTextBoxColumn.Width = 150;
             // 
             // deletedDateDataGridViewTextBoxColumn
@@ -88,6 +104,7 @@
             deletedDateDataGridViewTextBoxColumn.HeaderText = "deletedDate";
             deletedDateDataGridViewTextBoxColumn.MinimumWidth = 8;
             deletedDateDataGridViewTextBoxColumn.Name = "deletedDateDataGridViewTextBoxColumn";
+            deletedDateDataGridViewTextBoxColumn.ReadOnly = true;
             deletedDateDataGridViewTextBoxColumn.Width = 150;
             // 
             // idDataGridViewTextBoxColumn
@@ -96,6 +113,7 @@
             idDataGridViewTextBoxColumn.HeaderText = "id";
             idDataGridViewTextBoxColumn.MinimumWidth = 8;
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
             idDataGridViewTextBoxColumn.Width = 150;
             // 
             // organizationIdDataGridViewTextBoxColumn
@@ -104,6 +122,7 @@
             organizationIdDataGridViewTextBoxColumn.HeaderText = "organizationId";
             organizationIdDataGridViewTextBoxColumn.MinimumWidth = 8;
             organizationIdDataGridViewTextBoxColumn.Name = "organizationIdDataGridViewTextBoxColumn";
+            organizationIdDataGridViewTextBoxColumn.ReadOnly = true;
             organizationIdDataGridViewTextBoxColumn.Width = 150;
             // 
             // folderIdDataGridViewTextBoxColumn
@@ -112,6 +131,7 @@
             folderIdDataGridViewTextBoxColumn.HeaderText = "folderId";
             folderIdDataGridViewTextBoxColumn.MinimumWidth = 8;
             folderIdDataGridViewTextBoxColumn.Name = "folderIdDataGridViewTextBoxColumn";
+            folderIdDataGridViewTextBoxColumn.ReadOnly = true;
             folderIdDataGridViewTextBoxColumn.Width = 150;
             // 
             // typeDataGridViewTextBoxColumn
@@ -120,6 +140,7 @@
             typeDataGridViewTextBoxColumn.HeaderText = "type";
             typeDataGridViewTextBoxColumn.MinimumWidth = 8;
             typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            typeDataGridViewTextBoxColumn.ReadOnly = true;
             typeDataGridViewTextBoxColumn.Width = 150;
             // 
             // repromptDataGridViewTextBoxColumn
@@ -128,6 +149,7 @@
             repromptDataGridViewTextBoxColumn.HeaderText = "reprompt";
             repromptDataGridViewTextBoxColumn.MinimumWidth = 8;
             repromptDataGridViewTextBoxColumn.Name = "repromptDataGridViewTextBoxColumn";
+            repromptDataGridViewTextBoxColumn.ReadOnly = true;
             repromptDataGridViewTextBoxColumn.Width = 150;
             // 
             // nameDataGridViewTextBoxColumn
@@ -136,6 +158,7 @@
             nameDataGridViewTextBoxColumn.HeaderText = "name";
             nameDataGridViewTextBoxColumn.MinimumWidth = 8;
             nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            nameDataGridViewTextBoxColumn.ReadOnly = true;
             nameDataGridViewTextBoxColumn.Width = 150;
             // 
             // notesDataGridViewTextBoxColumn
@@ -144,6 +167,7 @@
             notesDataGridViewTextBoxColumn.HeaderText = "notes";
             notesDataGridViewTextBoxColumn.MinimumWidth = 8;
             notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
+            notesDataGridViewTextBoxColumn.ReadOnly = true;
             notesDataGridViewTextBoxColumn.Width = 150;
             // 
             // favoriteDataGridViewCheckBoxColumn
@@ -152,6 +176,7 @@
             favoriteDataGridViewCheckBoxColumn.HeaderText = "favorite";
             favoriteDataGridViewCheckBoxColumn.MinimumWidth = 8;
             favoriteDataGridViewCheckBoxColumn.Name = "favoriteDataGridViewCheckBoxColumn";
+            favoriteDataGridViewCheckBoxColumn.ReadOnly = true;
             favoriteDataGridViewCheckBoxColumn.Width = 150;
             // 
             // secureNoteDataGridViewTextBoxColumn
@@ -160,6 +185,7 @@
             secureNoteDataGridViewTextBoxColumn.HeaderText = "secureNote";
             secureNoteDataGridViewTextBoxColumn.MinimumWidth = 8;
             secureNoteDataGridViewTextBoxColumn.Name = "secureNoteDataGridViewTextBoxColumn";
+            secureNoteDataGridViewTextBoxColumn.ReadOnly = true;
             secureNoteDataGridViewTextBoxColumn.Width = 150;
             // 
             // identityDataGridViewTextBoxColumn
@@ -168,6 +194,7 @@
             identityDataGridViewTextBoxColumn.HeaderText = "identity";
             identityDataGridViewTextBoxColumn.MinimumWidth = 8;
             identityDataGridViewTextBoxColumn.Name = "identityDataGridViewTextBoxColumn";
+            identityDataGridViewTextBoxColumn.ReadOnly = true;
             identityDataGridViewTextBoxColumn.Width = 150;
             // 
             // cardDataGridViewTextBoxColumn
@@ -176,6 +203,7 @@
             cardDataGridViewTextBoxColumn.HeaderText = "card";
             cardDataGridViewTextBoxColumn.MinimumWidth = 8;
             cardDataGridViewTextBoxColumn.Name = "cardDataGridViewTextBoxColumn";
+            cardDataGridViewTextBoxColumn.ReadOnly = true;
             cardDataGridViewTextBoxColumn.Width = 150;
             // 
             // loginDataGridViewTextBoxColumn
@@ -184,24 +212,70 @@
             loginDataGridViewTextBoxColumn.HeaderText = "login";
             loginDataGridViewTextBoxColumn.MinimumWidth = 8;
             loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+            loginDataGridViewTextBoxColumn.ReadOnly = true;
             loginDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // itemBindingSource
+            // 
+            itemBindingSource.DataSource = typeof(Item);
+            // 
+            // loginBindingSource
+            // 
+            loginBindingSource.DataSource = typeof(Login);
+            // 
+            // cardBindingSource
+            // 
+            cardBindingSource.DataSource = typeof(Card);
+            // 
+            // rootobjectBindingSource
+            // 
+            rootobjectBindingSource.DataSource = typeof(Rootobject);
+            // 
+            // identityBindingSource
+            // 
+            identityBindingSource.DataSource = typeof(Identity);
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToDeleteRows = false;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(39, 341);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.ReadOnly = true;
+            dataGridView2.RowHeadersWidth = 62;
+            dataGridView2.Size = new Size(1011, 225);
+            dataGridView2.TabIndex = 1;
+            // 
+            // securenoteBindingSource
+            // 
+            securenoteBindingSource.DataSource = typeof(Securenote);
             // 
             // Results
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1082, 593);
+            Controls.Add(dataGridView2);
             Controls.Add(dataGridView1);
             Name = "Results";
             Text = "Results";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)itemBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)loginBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cardBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)rootobjectBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)identityBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)securenoteBindingSource).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private DataGridView dataGridView1;
+        private BindingSource itemBindingSource;
+        private BindingSource loginBindingSource;
         private DataGridViewTextBoxColumn revisionDateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn creationDateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn deletedDateDataGridViewTextBoxColumn;
@@ -217,6 +291,10 @@
         private DataGridViewTextBoxColumn identityDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cardDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
-        private BindingSource itemBindingSource;
+        private BindingSource cardBindingSource;
+        private BindingSource rootobjectBindingSource;
+        private BindingSource identityBindingSource;
+        private DataGridView dataGridView2;
+        private BindingSource securenoteBindingSource;
     }
 }

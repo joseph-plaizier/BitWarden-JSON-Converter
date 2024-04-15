@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\BitWarden JSON.csproj",
+      "projectUniqueName": "Z:\\Projects\\Coding\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\BitWarden JSON.csproj",
       "projectName": "BitWarden JSON",
-      "projectPath": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\BitWarden JSON.csproj",
+      "projectPath": "Z:\\Projects\\Coding\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\BitWarden JSON.csproj",
       "packagesPath": "C:\\Users\\cantc\\.nuget\\packages\\",
-      "outputPath": "Z:\\Projects\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\obj\\",
+      "outputPath": "Z:\\Projects\\Coding\\Visual Studio\\BitWarden JSON\\BitWarden JSON\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

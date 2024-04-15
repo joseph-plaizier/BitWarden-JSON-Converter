@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             checkedListBox1 = new CheckedListBox();
+            hcOK = new Button();
+            hcCancel = new Button();
             SuspendLayout();
             // 
             // checkedListBox1
@@ -36,14 +38,36 @@
             checkedListBox1.FormattingEnabled = true;
             checkedListBox1.Location = new Point(27, 26);
             checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(254, 508);
+            checkedListBox1.Size = new Size(584, 508);
             checkedListBox1.TabIndex = 0;
+            // 
+            // hcOK
+            // 
+            hcOK.Location = new Point(144, 563);
+            hcOK.Name = "hcOK";
+            hcOK.Size = new Size(112, 34);
+            hcOK.TabIndex = 1;
+            hcOK.Text = "OK";
+            hcOK.UseVisualStyleBackColor = true;
+            hcOK.Click += hcOK_Click;
+            // 
+            // hcCancel
+            // 
+            hcCancel.Location = new Point(385, 563);
+            hcCancel.Name = "hcCancel";
+            hcCancel.Size = new Size(112, 34);
+            hcCancel.TabIndex = 2;
+            hcCancel.Text = "Cancel";
+            hcCancel.UseVisualStyleBackColor = true;
+            hcCancel.Click += hcCancel_Click;
             // 
             // Hide_Columns
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(364, 643);
+            ClientSize = new Size(641, 643);
+            Controls.Add(hcCancel);
+            Controls.Add(hcOK);
             Controls.Add(checkedListBox1);
             Name = "Hide_Columns";
             Text = "Hide_Columns";
@@ -53,5 +77,7 @@
         #endregion
 
         private CheckedListBox checkedListBox1;
+        private Button hcOK;
+        private Button hcCancel;
     }
 }

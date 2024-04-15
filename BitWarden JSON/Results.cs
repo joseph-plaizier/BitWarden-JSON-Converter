@@ -85,11 +85,27 @@ namespace BitWarden_JSON
         {
             //when Hide Columns button is pressed...
             //create the dialog box window
-            Hide_Columns hideCol = new Hide_Columns(bitwarden);
+            Hide_Columns hideCol = new Hide_Columns(bitwarden, dataGridView1);
 
-            hideCol.ShowDialog();
-            //populate the columns available (seen or unseen) from the data grid
-            
+            var result = hideCol.ShowDialog();
+            if (result == DialogResult.OK) //OK button pressed
+            {
+                //populate the columns available (seen or unseen) from the data grid
+                bool[] showCol = hideCol.getColumns();
+
+                //for each item in the array, show or hide the cooresponding column
+                for (int i = 0; i < showCol.Length; i++)
+                {
+                    if (showCol[i] == false) //unchecked
+                    {
+                        dataGridView1.Columns[i].Visible = false;
+                    }
+                    else //checked
+                    {
+                        dataGridView1.Columns[i].Visible = true;
+                    }
+                }
+            } // end dialog result
         }
     }
 }

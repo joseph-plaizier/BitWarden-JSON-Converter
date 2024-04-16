@@ -35,15 +35,19 @@
             // 
             // checkedListBox1
             // 
+            checkedListBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            checkedListBox1.CheckOnClick = true;
             checkedListBox1.FormattingEnabled = true;
             checkedListBox1.Location = new Point(27, 26);
+            checkedListBox1.MinimumSize = new Size(350, 300);
             checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(584, 508);
+            checkedListBox1.Size = new Size(370, 508);
             checkedListBox1.TabIndex = 0;
             // 
             // hcOK
             // 
-            hcOK.Location = new Point(144, 563);
+            hcOK.Anchor = AnchorStyles.None;
+            hcOK.Location = new Point(52, 564);
             hcOK.Name = "hcOK";
             hcOK.Size = new Size(112, 34);
             hcOK.TabIndex = 1;
@@ -53,7 +57,8 @@
             // 
             // hcCancel
             // 
-            hcCancel.Location = new Point(385, 563);
+            hcCancel.Anchor = AnchorStyles.None;
+            hcCancel.Location = new Point(257, 564);
             hcCancel.Name = "hcCancel";
             hcCancel.Size = new Size(112, 34);
             hcCancel.TabIndex = 2;
@@ -65,10 +70,12 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(641, 643);
+            ClientSize = new Size(428, 644);
             Controls.Add(hcCancel);
             Controls.Add(hcOK);
             Controls.Add(checkedListBox1);
+            MaximumSize = new Size(450, 700);
+            MinimumSize = new Size(450, 700);
             Name = "Hide_Columns";
             Text = "Hide_Columns";
             ResumeLayout(false);

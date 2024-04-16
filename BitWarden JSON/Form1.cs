@@ -103,11 +103,9 @@ namespace BitWarden_JSON
             }
             
             Results f2 = new Results(bitWarden);
-            
+
             //f2.DataContext = f2;
             f2.ShowDialog();
-            
-
         }
     }
 }

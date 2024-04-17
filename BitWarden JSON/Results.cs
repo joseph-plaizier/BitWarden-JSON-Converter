@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -106,6 +107,22 @@ namespace BitWarden_JSON
                     }
                 }
             } // end dialog result
+        }
+
+        private void showColumns_Click(object sender, EventArgs e)
+        {
+            //show all columns
+            //create Hide_Columns object
+            Hide_Columns showCol = new Hide_Columns(bitwarden, dataGridView1);
+            ArrayList colNames = new ArrayList();
+            //populate the columns available (seen or unseen) from the data grid
+             colNames = showCol.getColumnNames();
+
+            //for each item in the array set to show the cooresponding column
+            for (int i = 0; i < colNames.Count; i++)
+            {
+                dataGridView1.Columns[i].Visible = true; 
+            }
         }
     }
 }

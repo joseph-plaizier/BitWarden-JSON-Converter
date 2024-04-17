@@ -20,6 +20,7 @@ namespace BitWarden_JSON
         Item bitItem;
         BindingSource bindingsource = new BindingSource();
         bool[] cVisibility;
+        ArrayList columns = new ArrayList();
         public Hide_Columns(Rootobject bitItem, DataGridView grid)
         {
             //save object from parameters to created object
@@ -33,6 +34,7 @@ namespace BitWarden_JSON
                 if (!(prop.PropertyType.IsArray))
                 {
                     checkedListBox1.Items.Add(prop.Name);
+                    columns.Add(prop.Name);
                 }
             }
             //check if the column is visible and set it as checked or not when the form opens
@@ -78,5 +80,6 @@ namespace BitWarden_JSON
         }
 
         public bool[] getColumns() => cVisibility;
+        public ArrayList getColumnNames() => columns;
     }
 }

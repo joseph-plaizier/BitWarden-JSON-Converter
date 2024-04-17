@@ -53,6 +53,7 @@
             dataGridView2 = new DataGridView();
             securenoteBindingSource = new BindingSource(components);
             Columns = new Button();
+            showColumns = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itemBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)loginBindingSource).BeginInit();
@@ -262,11 +263,22 @@
             Columns.UseVisualStyleBackColor = true;
             Columns.Click += Columns_Click;
             // 
+            // showColumns
+            // 
+            showColumns.Location = new Point(1078, 184);
+            showColumns.Name = "showColumns";
+            showColumns.Size = new Size(127, 65);
+            showColumns.TabIndex = 3;
+            showColumns.Text = "Show All Columns";
+            showColumns.UseVisualStyleBackColor = true;
+            showColumns.Click += showColumns_Click;
+            // 
             // Results
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1234, 753);
+            Controls.Add(showColumns);
             Controls.Add(Columns);
             Controls.Add(dataGridView2);
             Controls.Add(dataGridView1);
@@ -309,5 +321,6 @@
         private DataGridView dataGridView2;
         private BindingSource securenoteBindingSource;
         private Button Columns;
+        private Button showColumns;
     }
 }

@@ -54,6 +54,9 @@
             securenoteBindingSource = new BindingSource(components);
             Columns = new Button();
             showColumns = new Button();
+            print = new Button();
+            close = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itemBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)loginBindingSource).BeginInit();
@@ -246,7 +249,7 @@
             dataGridView2.Name = "dataGridView2";
             dataGridView2.ReadOnly = true;
             dataGridView2.RowHeadersWidth = 62;
-            dataGridView2.Size = new Size(1011, 225);
+            dataGridView2.Size = new Size(1011, 143);
             dataGridView2.TabIndex = 1;
             // 
             // securenoteBindingSource
@@ -273,11 +276,43 @@
             showColumns.UseVisualStyleBackColor = true;
             showColumns.Click += showColumns_Click;
             // 
+            // print
+            // 
+            print.Location = new Point(1078, 292);
+            print.Name = "print";
+            print.Size = new Size(127, 65);
+            print.TabIndex = 4;
+            print.Text = "Print";
+            print.UseVisualStyleBackColor = true;
+            print.Click += print_Click;
+            // 
+            // close
+            // 
+            close.Location = new Point(1078, 404);
+            close.Name = "close";
+            close.Size = new Size(127, 65);
+            close.TabIndex = 5;
+            close.Text = "Close";
+            close.UseVisualStyleBackColor = true;
+            close.Click += close_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(39, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(453, 25);
+            label1.TabIndex = 6;
+            label1.Text = "Click on a row to see information about that saved item";
+            // 
             // Results
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1234, 753);
+            ClientSize = new Size(1234, 512);
+            Controls.Add(label1);
+            Controls.Add(close);
+            Controls.Add(print);
             Controls.Add(showColumns);
             Controls.Add(Columns);
             Controls.Add(dataGridView2);
@@ -293,6 +328,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)securenoteBindingSource).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -322,5 +358,8 @@
         private BindingSource securenoteBindingSource;
         private Button Columns;
         private Button showColumns;
+        private Button print;
+        private Button close;
+        private Label label1;
     }
 }

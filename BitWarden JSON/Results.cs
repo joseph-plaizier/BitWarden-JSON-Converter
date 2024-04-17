@@ -116,13 +116,25 @@ namespace BitWarden_JSON
             Hide_Columns showCol = new Hide_Columns(bitwarden, dataGridView1);
             ArrayList colNames = new ArrayList();
             //populate the columns available (seen or unseen) from the data grid
-             colNames = showCol.getColumnNames();
+            colNames = showCol.getColumnNames();
 
             //for each item in the array set to show the cooresponding column
             for (int i = 0; i < colNames.Count; i++)
             {
-                dataGridView1.Columns[i].Visible = true; 
+                dataGridView1.Columns[i].Visible = true;
             }
+        }
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            //close the form
+            this.Close();
+        }
+
+        private void print_Click(object sender, EventArgs e)
+        {
+            //print the columns shown in both the top data grid and the bottom data grid
+
         }
     }
 }

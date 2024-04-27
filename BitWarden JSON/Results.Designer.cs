@@ -57,6 +57,7 @@
             print = new Button();
             close = new Button();
             label1 = new Label();
+            saveCSV = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itemBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)loginBindingSource).BeginInit();
@@ -278,9 +279,9 @@
             // 
             // print
             // 
-            print.Location = new Point(1078, 292);
+            print.Location = new Point(1078, 279);
             print.Name = "print";
-            print.Size = new Size(127, 65);
+            print.Size = new Size(127, 34);
             print.TabIndex = 4;
             print.Text = "Print";
             print.UseVisualStyleBackColor = true;
@@ -305,11 +306,22 @@
             label1.TabIndex = 6;
             label1.Text = "Click on a row to see information about that saved item";
             // 
+            // saveCSV
+            // 
+            saveCSV.Location = new Point(1078, 341);
+            saveCSV.Name = "saveCSV";
+            saveCSV.Size = new Size(127, 34);
+            saveCSV.TabIndex = 7;
+            saveCSV.Text = "Save as CSV";
+            saveCSV.UseVisualStyleBackColor = true;
+            saveCSV.Click += saveCSV_Click;
+            // 
             // Results
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1234, 512);
+            Controls.Add(saveCSV);
             Controls.Add(label1);
             Controls.Add(close);
             Controls.Add(print);
@@ -361,5 +373,6 @@
         private Button print;
         private Button close;
         private Label label1;
+        private Button saveCSV;
     }
 }

@@ -1,5 +1,6 @@
 using Microsoft.VisualBasic;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace BitWarden_JSON
 {
@@ -90,8 +91,6 @@ namespace BitWarden_JSON
             //read the entire json file and save it to the string variable
             file = File.ReadAllText(filePath);
 
-            
-            
             //call JSON Class
             Rootobject? bitWarden = JsonSerializer.Deserialize<Rootobject>(file);
 

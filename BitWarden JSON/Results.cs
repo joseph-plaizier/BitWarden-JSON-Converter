@@ -152,119 +152,210 @@ namespace BitWarden_JSON
 
         private void combineData()
         {
-            //TODO: clean up this method to ensure it's working
-
-            //get field names for passwordhistory class
-            PropertyInfo[] passwordhistoryProperties;
-            passwordhistoryProperties = Type.GetType("Passwordhistory").GetProperties();
-            foreach (PropertyInfo prop in passwordhistoryProperties)
-            {
-                //MessageBox.Show($"Securenote properties are: {prop.Name}", "test", MessageBoxButtons.OK);
-                dataGridView1.Columns.Add($"passwordhistory{prop.Name}", $"Password History {prop.Name}");
-            }
+            //get field names for password history class
+            addColumns("Passwordhistory", "Password History");
 
             //get field names for secureNote class
-            PropertyInfo[] securenoteProperties;
-            securenoteProperties = Type.GetType("Securenote").GetProperties();
-            foreach (PropertyInfo prop in securenoteProperties)
-            {
-                //MessageBox.Show($"Securenote properties are: {prop.Name}", "test", MessageBoxButtons.OK);
-                dataGridView1.Columns.Add($"secureNote{prop.Name}",$"Secure Note {prop.Name}");
-            }
+            addColumns("Securenote", "Secure Note");
 
             //get field names for identity class
-            PropertyInfo[] identityProperties;
-            identityProperties = Type.GetType("Identity").GetProperties();
-            foreach (PropertyInfo prop in identityProperties)
-            {
-                //MessageBox.Show($"Identity properties are: {prop.Name}", "test", MessageBoxButtons.OK);
-                dataGridView1.Columns.Add($"identity{prop.Name}", $"Identity {prop.Name}");
-            }
+            addColumns("Identity", "Identity");
 
             //get data for card class
-            PropertyInfo[] cardProperties;
-            cardProperties = Type.GetType("Card").GetProperties();
-            foreach (PropertyInfo prop in cardProperties)
-            {
-                //MessageBox.Show($"Identity properties are: {prop.Name}", "test", MessageBoxButtons.OK);
-                dataGridView1.Columns.Add($"card{prop.Name}", $"Card {prop.Name}");
-            }
+            addColumns("Card", "Card");
 
             //get data for login class
-            PropertyInfo[] loginProperties;
-            loginProperties = Type.GetType("Login").GetProperties();
-            foreach (PropertyInfo prop in loginProperties)
-            {
-                //MessageBox.Show($"Identity properties are: {prop.Name}", "test", MessageBoxButtons.OK);
-                dataGridView1.Columns.Add($"login{prop.Name}", $"Login {prop.Name}");
-            }
+            addColumns("Login", "Login");
 
             //get data for Uri class
-            PropertyInfo[] uriProperties;
-            uriProperties = Type.GetType("Uri").GetProperties();
-            foreach (PropertyInfo prop in uriProperties)
-            {
-                //MessageBox.Show($"Identity properties are: {prop.Name}", "test", MessageBoxButtons.OK);
-                dataGridView1.Columns.Add($"loginuri{prop.Name}", $"Login Uri {prop.Name}");
-            }
+            addColumns("Uri", "Login Uri");
 
+
+
+            //fill in datagrid with correct data
+            //get the ID
+
+            //MessageBox.Show(id.ToString(), "Test", MessageBoxButtons.OK);
+
+            //search through the items object to find the matching ID
+            int count = 0;
+            foreach (Item entry in bitwarden.items)
+            {
+                //TODO: Don't forget to check for password history
+
+
+                int index = -1;
+                //determine the type
+                //1 = Login; 2 = SecureNote ; 3 = Card ; 4 = Identity
+                int type = entry.type;
+                if (type == 1) //login
+                {
+                    Login loginData = entry.login;
+                    Uri[] uriData = loginData.uris;
+                    //get the login info and enter it into datagrid1
+                    //loginfido2Credentials
+                    index = getColumnIndex("loginfido2Credentials");
+                    dataGridView1[index, count].Value = loginData.fido2Credentials;
+                    //login uri
+                    var uriMatch = "";
+                    var uriUri = "";
+                    foreach(Uri uri in uriData)
+                    {
+                        uriMatch += $"{uri.match},";
+                        uriUri += $"{uri.uri},";
+                    }
+                    index = getColumnIndex("urimatch");
+                    dataGridView1[index, count].Value = uriMatch;
+                    index = getColumnIndex("uriuri");
+                    dataGridView1[index, count].Value = uriUri;
+                    //username
+                    index = getColumnIndex("loginusername");
+                    dataGridView1[index, count].Value = loginData.username;
+                    //password
+                    index = getColumnIndex("loginpassword");
+                    dataGridView1[index, count].Value = loginData.password;
+                    //totp
+                    index = getColumnIndex("logintotp");
+                    dataGridView1[index, count].Value = loginData.totp;
+
+                }
+                else if (type == 2) //secure note
+                {
+                    Securenote securenote = entry.secureNote;
+                    //type
+                    index = getColumnIndex("securenotetype");
+                    dataGridView1[index, count].Value = securenote.type;
+                }
+                else if (type == 3) //card
+                {
+                    Card card = entry.card;
+                    //cardholderName
+                    index = getColumnIndex("cardcardholderName");
+                    dataGridView1[index, count].Value = card.cardholderName;
+                    //brand
+                    index = getColumnIndex("cardbrand");
+                    dataGridView1[index, count].Value = card.brand;
+                    //number
+                    index = getColumnIndex("cardnumber");
+                    dataGridView1[index, count].Value = card.number;
+                    //expMonth
+                    index = getColumnIndex("cardexpMonth");
+                    dataGridView1[index, count].Value = card.expMonth;
+                    //expYear
+                    index = getColumnIndex("cardexpYear");
+                    dataGridView1[index, count].Value = card.expYear;
+                    //code
+                    index = getColumnIndex("cardcode");
+                    dataGridView1[index, count].Value = card.code;
+                }
+                else if (type == 4) //identity
+                {
+                    Identity identity = entry.identity;
+                    //title
+                    index = getColumnIndex("identitytitle");
+                    dataGridView1[index, count].Value = identity.title;
+                    //firstName
+                    index = getColumnIndex("identityfirstName");
+                    dataGridView1[index, count].Value = identity.firstName;
+                    //middleName
+                    index = getColumnIndex("identitymiddleName");
+                    dataGridView1[index, count].Value = identity.middleName;
+                    //lastName
+                    index = getColumnIndex("identitylastName");
+                    dataGridView1[index, count].Value = identity.lastName;
+                    //address1
+                    index = getColumnIndex("identityaddress1");
+                    dataGridView1[index, count].Value = identity.address1;
+                    //address2
+                    index = getColumnIndex("identityaddress2");
+                    dataGridView1[index, count].Value = identity.address2;
+                    //address3
+                    index = getColumnIndex("identityaddress3");
+                    dataGridView1[index, count].Value = identity.address3;
+                    //city
+                    index = getColumnIndex("identitycity");
+                    dataGridView1[index, count].Value = identity.city;
+                    //state
+                    index = getColumnIndex("identitystate");
+                    dataGridView1[index, count].Value = identity.state;
+                    //postalCode
+                    index = getColumnIndex("identitypostalCode");
+                    dataGridView1[index, count].Value = identity.postalCode;
+                    //country
+                    index = getColumnIndex("identitycountry");
+                    dataGridView1[index, count].Value = identity.country;
+                    //company
+                    index = getColumnIndex("identitycompany");
+                    dataGridView1[index, count].Value = identity.company;
+                    //email
+                    index = getColumnIndex("identityemail");
+                    dataGridView1[index, count].Value = identity.email;
+                    //phone
+                    index = getColumnIndex("identityphone");
+                    dataGridView1[index, count].Value = identity.phone;
+                    //ssn
+                    index = getColumnIndex("identityssn");
+                    dataGridView1[index, count].Value = identity.ssn;
+                    //username
+                    index = getColumnIndex("identityusername");
+                    dataGridView1[index, count].Value = identity.username;
+                    //passportNumber
+                    index = getColumnIndex("identitypassportNumber");
+                    dataGridView1[index, count].Value = identity.passportNumber;
+                    //licenseNumber
+                    index = getColumnIndex("identitylicenseNumber");
+                    dataGridView1[index, count].Value = identity.licenseNumber;
+                }
+                
+                //check if password history has some data
+                if(entry.passwordHistory != null)
+                {
+                    Passwordhistory[] passwordhistory = entry.passwordHistory;
+                    var lastUsedDate = "";
+                    var password = "";
+                    foreach (Passwordhistory record in passwordhistory)
+                    {
+                        lastUsedDate += $"{record.lastUsedDate},";
+                        password += $"{record.password},";
+                    }
+                    index = getColumnIndex("passwordhistorylastUsedDate");
+                    dataGridView1[index, count].Value = lastUsedDate;
+                    index = getColumnIndex("passwordhistorypassword");
+                    dataGridView1[index, count].Value = password;
+                }
+                count++;
+            } //end foreach
 
             //remove columns securenote, identity, card, and login
-
             dataGridView1.Columns.Remove("secureNoteDataGridViewTextBoxColumn");
             dataGridView1.Columns.Remove("cardDataGridViewTextBoxColumn");
             dataGridView1.Columns.Remove("identityDataGridViewTextBoxColumn");
             dataGridView1.Columns.Remove("loginDataGridViewTextBoxColumn");
             dataGridView1.Columns.Remove("loginuris");
+        }
 
+        private void addColumns(string className, string columnName)
+        {
+            //get field names for passwordhistory class
+            PropertyInfo[] properties;
+            properties = Type.GetType(className).GetProperties();
+            foreach (PropertyInfo prop in properties)
+            {
+                //MessageBox.Show($"Securenote properties are: {prop.Name}", "test", MessageBoxButtons.OK);
+                dataGridView1.Columns.Add($"{className}{prop.Name}", $"{columnName} {prop.Name}");
+            }
+        }
 
-            //get the columns for each type of class
-
-            
-
-            //add all the columns into an object/table
-            //get the ID
-            //string id = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            //MessageBox.Show(id.ToString(), "Test", MessageBoxButtons.OK);
-
-            //search through the items object to find the matching ID
-            //foreach (Item entry in bitwarden.items)
-            //{
-                
-                
-                //add current items to the datatable
-                
-                //determine the type
-                    //1 = Login; 2 = SecureNote ; 3 = Card ; 4 = Identity
-                    //int type = entry.type;
-                    //if (type == 1) //login
-                    //{
-                        //get the login info and add it to datatable 3
-                        //bindingsource.DataSource = entry.login;
-                        //display the login info in datagrid2
-                        //dataGridView2.DataSource = bindingsource;
-                        //MessageBox.Show(entry.login.GetType().ToString(), "Test", MessageBoxButtons.OK);
-                    //}
-                    //else if (type == 2) //secure note
-                    //{
-                        //bindingsource.DataSource = entry.secureNote;
-                        //dataGridView2.DataSource = bindingsource;
-                        //MessageBox.Show(entry.secureNote.ToString(), "Test", MessageBoxButtons.OK);
-                    //}
-                    //else if (type == 3) //card
-                   //{
-                        //bindingsource.DataSource = entry.card;
-                        //dataGridView2.DataSource = bindingsource;
-                    //}
-                    //else if (type == 4) //identity
-                    //{
-                        //bindingsource.DataSource = entry.identity;
-                        //dataGridView2.DataSource = bindingsource;
-                    //}
-                    //MessageBox.Show(, "test", MessageBoxButtons.OK);
-                    //MessageBox.Show(entry.name, "Test", MessageBoxButtons.OK);
-                //}
-            //}
+        private int getColumnIndex(string columnName)
+        {
+            int index = -1;
+            var dataGridViewColumn = dataGridView1.Columns[$"{columnName}"];
+            if (dataGridViewColumn != null)
+            {
+                index = dataGridView1.Columns.IndexOf(dataGridViewColumn);
+                return index;
+            }
+            return index;
         }
     }
 }

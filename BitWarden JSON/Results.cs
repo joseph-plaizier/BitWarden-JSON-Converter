@@ -153,18 +153,60 @@ namespace BitWarden_JSON
         private void combineData()
         {
             //TODO: clean up this method to ensure it's working
-            //will most likely need to add all of the field names manually
+
+            //get field names for passwordhistory class
+            PropertyInfo[] passwordhistoryProperties;
+            passwordhistoryProperties = Type.GetType("Passwordhistory").GetProperties();
+            foreach (PropertyInfo prop in passwordhistoryProperties)
+            {
+                //MessageBox.Show($"Securenote properties are: {prop.Name}", "test", MessageBoxButtons.OK);
+                dataGridView1.Columns.Add($"passwordhistory{prop.Name}", $"Password History {prop.Name}");
+            }
 
             //get field names for secureNote class
-            dataGridView1.Columns.Add("secureNoteType","securenote type");
-            
-            //get field names for identity class
+            PropertyInfo[] securenoteProperties;
+            securenoteProperties = Type.GetType("Securenote").GetProperties();
+            foreach (PropertyInfo prop in securenoteProperties)
+            {
+                //MessageBox.Show($"Securenote properties are: {prop.Name}", "test", MessageBoxButtons.OK);
+                dataGridView1.Columns.Add($"secureNote{prop.Name}",$"Secure Note {prop.Name}");
+            }
 
+            //get field names for identity class
+            PropertyInfo[] identityProperties;
+            identityProperties = Type.GetType("Identity").GetProperties();
+            foreach (PropertyInfo prop in identityProperties)
+            {
+                //MessageBox.Show($"Identity properties are: {prop.Name}", "test", MessageBoxButtons.OK);
+                dataGridView1.Columns.Add($"identity{prop.Name}", $"Identity {prop.Name}");
+            }
 
             //get data for card class
+            PropertyInfo[] cardProperties;
+            cardProperties = Type.GetType("Card").GetProperties();
+            foreach (PropertyInfo prop in cardProperties)
+            {
+                //MessageBox.Show($"Identity properties are: {prop.Name}", "test", MessageBoxButtons.OK);
+                dataGridView1.Columns.Add($"card{prop.Name}", $"Card {prop.Name}");
+            }
 
             //get data for login class
+            PropertyInfo[] loginProperties;
+            loginProperties = Type.GetType("Login").GetProperties();
+            foreach (PropertyInfo prop in loginProperties)
+            {
+                //MessageBox.Show($"Identity properties are: {prop.Name}", "test", MessageBoxButtons.OK);
+                dataGridView1.Columns.Add($"login{prop.Name}", $"Login {prop.Name}");
+            }
 
+            //get data for Uri class
+            PropertyInfo[] uriProperties;
+            uriProperties = Type.GetType("Uri").GetProperties();
+            foreach (PropertyInfo prop in uriProperties)
+            {
+                //MessageBox.Show($"Identity properties are: {prop.Name}", "test", MessageBoxButtons.OK);
+                dataGridView1.Columns.Add($"loginuri{prop.Name}", $"Login Uri {prop.Name}");
+            }
 
 
             //remove columns securenote, identity, card, and login
@@ -173,6 +215,7 @@ namespace BitWarden_JSON
             dataGridView1.Columns.Remove("cardDataGridViewTextBoxColumn");
             dataGridView1.Columns.Remove("identityDataGridViewTextBoxColumn");
             dataGridView1.Columns.Remove("loginDataGridViewTextBoxColumn");
+            dataGridView1.Columns.Remove("loginuris");
 
 
             //get the columns for each type of class

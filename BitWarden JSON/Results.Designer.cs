@@ -58,6 +58,7 @@
             close = new Button();
             label1 = new Label();
             saveCSV = new Button();
+            printDialog1 = new PrintDialog();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itemBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)loginBindingSource).BeginInit();
@@ -316,6 +317,10 @@
             saveCSV.UseVisualStyleBackColor = true;
             saveCSV.Click += saveCSV_Click;
             // 
+            // printDialog1
+            // 
+            printDialog1.UseEXDialog = true;
+            // 
             // Results
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -374,5 +379,6 @@
         private Button close;
         private Label label1;
         private Button saveCSV;
+        private PrintDialog printDialog1;
     }
 }

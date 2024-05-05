@@ -16,6 +16,8 @@ namespace BitWarden_JSON
     {
         Rootobject bitwarden;
         BindingSource bindingsource = new BindingSource();
+        // Declare the PrintDocument object.
+        private System.Drawing.Printing.PrintDocument docToPrint = new System.Drawing.Printing.PrintDocument();
         public Results(Rootobject bitwarden)
         {
             InitializeComponent();
@@ -137,9 +139,41 @@ namespace BitWarden_JSON
             //when clicked, run combineData, open print dialog
             //run combineData
             combineData();
-            // TODO: open print dialog
 
+            // Set the Document property to the PrintDocument for 
+            // which the PrintPage Event has been handled. To display the
+            // dialog, either this property or the PrinterSettings property 
+            // must be set 
+            printDialog1.Document = docToPrint;
 
+            DialogResult result = printDialog1.ShowDialog();
+
+            // If the result is OK then print the document.
+            if (result == DialogResult.OK)
+            {
+                docToPrint.Print();
+            }
+        }
+
+        // The PrintDialog will print the document
+        // by handling the document's PrintPage event.
+        private void document_PrintPage(object sender,
+            System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            //TODO: Update to print datagrid1
+
+            // Insert code to render the page here.
+            // This code will be called when the control is drawn.
+
+            // The following code will render a simple
+            // message on the printed document.
+            string text = "In document_PrintPage method.";
+            System.Drawing.Font printFont = new System.Drawing.Font
+                ("Arial", 35, System.Drawing.FontStyle.Regular);
+
+            // Draw the content.
+            e.Graphics.DrawString(text, printFont,
+                System.Drawing.Brushes.Black, 10, 10);
         }
 
         private void saveCSV_Click(object sender, EventArgs e)
@@ -170,20 +204,13 @@ namespace BitWarden_JSON
             //get data for Uri class
             addColumns("Uri", "Login Uri");
 
-
-
             //fill in datagrid with correct data
             //get the ID
-
-            //MessageBox.Show(id.ToString(), "Test", MessageBoxButtons.OK);
 
             //search through the items object to find the matching ID
             int count = 0;
             foreach (Item entry in bitwarden.items)
             {
-                //TODO: Don't forget to check for password history
-
-
                 int index = -1;
                 //determine the type
                 //1 = Login; 2 = SecureNote ; 3 = Card ; 4 = Identity

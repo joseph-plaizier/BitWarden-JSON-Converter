@@ -207,8 +207,11 @@ namespace BitWarden_JSON
                     data = "";
                     for (int i = 0; i < totalcolms; i++)
                     {
-                        //look at each column and set the value to a string in the data variable
-                        //TODO: This next line is separating out the notes portion of some of the records.
+                        if (row.Cells[i].Value != null)
+                        {
+                            //remove any \n and ,
+                            row.Cells[i].Value = row.Cells[i].Value.ToString().Replace("\n", "; ").Replace("," ," ");
+                        }
                         data += (row.Cells[i].Value ?? "").ToString() + ',';
                     }
                     //if (data != string.Empty) csv.WriteLine(data);
@@ -224,6 +227,7 @@ namespace BitWarden_JSON
             //run combineData
             combineData();
             //TODO: open save dialog
+
             export_csv(@"C:\Users\cantc\Downloads\csv-export.csv", dataGridView1);
         }
 

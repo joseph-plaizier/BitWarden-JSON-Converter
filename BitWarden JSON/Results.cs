@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DGVPrinterHelper;
 
 namespace BitWarden_JSON
 {
@@ -140,40 +141,81 @@ namespace BitWarden_JSON
             //run combineData
             combineData();
 
+            //create DataGrid View Printer object
+            DGVPrinter printer = new DGVPrinter();
+
+            printer.Title = "DataGridView Report";
+
+            printer.SubTitle = "An Easy to Use DataGridView Printing Object";
+
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | 
+
+                                          StringFormatFlags.NoClip;
+
+            printer.PageNumbers = true;
+
+            printer.PageNumberInHeader = false;
+
+            printer.PorportionalColumns = true;
+
+            printer.HeaderCellAlignment = StringAlignment.Near;
+
+            printer.Footer = "Your Company Name Here";
+
+            printer.FooterSpacing = 15;
+
+            printer.PrintPreviewDataGridView(dataGridView1);
+
+            printer.PrintDataGridView(dataGridView1);
+
+
+
             // Set the Document property to the PrintDocument for 
             // which the PrintPage Event has been handled. To display the
             // dialog, either this property or the PrinterSettings property 
             // must be set 
-            printDialog1.Document = docToPrint;
+            //printDialog1.Document = docToPrint;
 
-            DialogResult result = printDialog1.ShowDialog();
+            //DialogResult result = printDialog1.ShowDialog();
 
             // If the result is OK then print the document.
-            if (result == DialogResult.OK)
-            {
-                docToPrint.Print();
-            }
+            //if (result == DialogResult.OK)
+            //{
+            //    docToPrint.Print();
+            //}
         }
 
         // The PrintDialog will print the document
         // by handling the document's PrintPage event.
-        private void document_PrintPage(object sender,
-            System.Drawing.Printing.PrintPageEventArgs e)
+
+        void export_csv(string file, DataGridView grid)
         {
-            //TODO: Update to print datagrid1
+            using (StreamWriter csv = new StreamWriter(file, false))
+            {
+                int totalcolms = grid.ColumnCount;
+                //add headers to csv file
+                foreach (DataGridViewColumn colm in grid.Columns) csv.Write(colm.HeaderText + ',');
+                //go to next(first) row under headers
+                csv.Write('\n');
+                //create cell data variable and set it to null/empty
+                string data = "";
+                foreach (DataGridViewRow row in grid.Rows)
+                {
+                    //if it's an empty row continue with the remainder of the code
+                    if (row.IsNewRow) 
+                        continue;
+                    data = "";
+                    for (int i = 0; i < totalcolms; i++)
+                    {
+                        //look at each column and set the value to a string in the data variable
+                        //TODO: This next line is separating out the notes portion of some of the records.
+                        data += (row.Cells[i].Value ?? "").ToString() + ',';
+                    }
+                    //if (data != string.Empty) csv.WriteLine(data);
+                    csv.WriteLine(data);
+                }
+            }
 
-            // Insert code to render the page here.
-            // This code will be called when the control is drawn.
-
-            // The following code will render a simple
-            // message on the printed document.
-            string text = "In document_PrintPage method.";
-            System.Drawing.Font printFont = new System.Drawing.Font
-                ("Arial", 35, System.Drawing.FontStyle.Regular);
-
-            // Draw the content.
-            e.Graphics.DrawString(text, printFont,
-                System.Drawing.Brushes.Black, 10, 10);
         }
 
         private void saveCSV_Click(object sender, EventArgs e)
@@ -182,6 +224,7 @@ namespace BitWarden_JSON
             //run combineData
             combineData();
             //TODO: open save dialog
+            export_csv(@"C:\Users\cantc\Downloads\csv-export.csv", dataGridView1);
         }
 
         private void combineData()

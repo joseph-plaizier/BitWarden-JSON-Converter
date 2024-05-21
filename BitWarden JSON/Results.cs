@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DGVPrinterHelper;
+using Microsoft.VisualBasic;
 
 namespace BitWarden_JSON
 {
@@ -227,8 +228,22 @@ namespace BitWarden_JSON
             //run combineData
             combineData();
             //TODO: open save dialog
+            string filepath = String.Empty;
+            saveFileDialog1.FileName = "csv-export";
+            saveFileDialog1.AddExtension = true;
+            saveFileDialog1.Filter = "Comma Separated Value (*.csv) | *.csv";
+            saveFileDialog1.Title = "Save CSV";
+            saveFileDialog1.FilterIndex = 1;
+            saveFileDialog1.RestoreDirectory = true;
+            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                filepath = saveFileDialog1.FileName;
+            }
+            //export_csv(@"C:\Users\cantc\Downloads\csv-export.csv", dataGridView1);
+            export_csv($"{filepath}", dataGridView1);
 
-            export_csv(@"C:\Users\cantc\Downloads\csv-export.csv", dataGridView1);
+            //display successful message box
+            MessageBox.Show($"CSV file successfully saved to {filepath}.", "Save Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void combineData()

@@ -59,6 +59,7 @@
             label1 = new Label();
             saveCSV = new Button();
             printDialog1 = new PrintDialog();
+            saveFileDialog1 = new SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itemBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)loginBindingSource).BeginInit();
@@ -380,5 +381,6 @@
         private Label label1;
         private Button saveCSV;
         private PrintDialog printDialog1;
+        private SaveFileDialog saveFileDialog1;
     }
 }

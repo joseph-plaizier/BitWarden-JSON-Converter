@@ -1,0 +1,5 @@
+Z:\Projects\Coding\Visual Studio\BitWarden JSON\BitWarden JSON\bin\Release\net8.0-windows\publish\BitWarden JSON.exe
+Z:\Projects\Coding\Visual Studio\BitWarden JSON\BitWarden JSON\bin\Release\net8.0-windows\publish\BitWarden JSON.dll
+Z:\Projects\Coding\Visual Studio\BitWarden JSON\BitWarden JSON\bin\Release\net8.0-windows\publish\BitWarden JSON.deps.json
+Z:\Projects\Coding\Visual Studio\BitWarden JSON\BitWarden JSON\bin\Release\net8.0-windows\publish\BitWarden JSON.runtimeconfig.json
+Z:\Projects\Coding\Visual Studio\BitWarden JSON\BitWarden JSON\bin\Release\net8.0-windows\publish\BitWarden JSON.pdb

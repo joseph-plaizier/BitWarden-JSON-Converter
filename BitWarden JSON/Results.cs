@@ -28,17 +28,14 @@ namespace BitWarden_JSON
             //add items from JSON to data grid
             dataGridView1.DataSource = bitwarden.items;
             dataGridView2.DataContext = bitwarden;
-
         }
+
+        bool runAlready = false;
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //when a cell is selected, pull the necessary information to the other data grids
             //determine the type selected
-
-            //Cell 6 has type
-            //int type = 6;
-            //int.Parse(dataGridView1.CurrentRow.Cells[6].Value.ToString());
 
             //get the ID
             string id = dataGridView1.CurrentRow.Cells[3].Value.ToString();
@@ -76,15 +73,8 @@ namespace BitWarden_JSON
                         bindingsource.DataSource = entry.identity;
                         dataGridView2.DataSource = bindingsource;
                     }
-                    //MessageBox.Show(, "test", MessageBoxButtons.OK);
-                    //MessageBox.Show(entry.name, "Test", MessageBoxButtons.OK);
                 }
             }
-
-            //Securenote securenote = (Securenote) dataGridView1.CurrentRow.Cells[12].Value;
-
-            //Cell 12 has Secure Note
-            //dataGridView2.DataSource = securenote;
         }
 
         private void Columns_Click(object sender, EventArgs e)
@@ -139,8 +129,11 @@ namespace BitWarden_JSON
         private void print_Click(object sender, EventArgs e)
         {
             //when clicked, run combineData, open print dialog
-            //run combineData
-            combineData();
+            if(runAlready == false)
+            {
+                //run combineData
+                combineData();
+            }
 
             //create DataGrid View Printer object
             DGVPrinter printer = new DGVPrinter();
@@ -165,25 +158,10 @@ namespace BitWarden_JSON
 
             printer.FooterSpacing = 15;
 
-            printer.PrintPreviewDataGridView(dataGridView1);
+            //printer.PrintPreviewDataGridView(dataGridView1);
 
             printer.PrintDataGridView(dataGridView1);
 
-
-
-            // Set the Document property to the PrintDocument for 
-            // which the PrintPage Event has been handled. To display the
-            // dialog, either this property or the PrinterSettings property 
-            // must be set 
-            //printDialog1.Document = docToPrint;
-
-            //DialogResult result = printDialog1.ShowDialog();
-
-            // If the result is OK then print the document.
-            //if (result == DialogResult.OK)
-            //{
-            //    docToPrint.Print();
-            //}
         }
 
         // The PrintDialog will print the document
@@ -215,7 +193,6 @@ namespace BitWarden_JSON
                         }
                         data += (row.Cells[i].Value ?? "").ToString() + ',';
                     }
-                    //if (data != string.Empty) csv.WriteLine(data);
                     csv.WriteLine(data);
                 }
             }
@@ -225,9 +202,11 @@ namespace BitWarden_JSON
         private void saveCSV_Click(object sender, EventArgs e)
         {
             //when clicked, run combineData, open save dialog, save as CSV file
-            //run combineData
-            combineData();
-            //TODO: open save dialog
+            if(runAlready == false)
+            {
+                //run combineData
+                combineData();
+            }
             string filepath = String.Empty;
             saveFileDialog1.FileName = "csv-export";
             saveFileDialog1.AddExtension = true;
@@ -238,12 +217,11 @@ namespace BitWarden_JSON
             if(saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 filepath = saveFileDialog1.FileName;
-            }
-            //export_csv(@"C:\Users\cantc\Downloads\csv-export.csv", dataGridView1);
-            export_csv($"{filepath}", dataGridView1);
+                export_csv($"{filepath}", dataGridView1);
 
-            //display successful message box
-            MessageBox.Show($"CSV file successfully saved to {filepath}.", "Save Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //display successful message box
+                MessageBox.Show($"CSV file successfully saved to {filepath}.", "Save Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void combineData()
@@ -421,6 +399,15 @@ namespace BitWarden_JSON
             dataGridView1.Columns.Remove("identityDataGridViewTextBoxColumn");
             dataGridView1.Columns.Remove("loginDataGridViewTextBoxColumn");
             dataGridView1.Columns.Remove("loginuris");
+
+            runAlready = true;
+
+            var emptyColumns = MessageBox.Show("Would you like to remove empty columns before proceeding?", "Remove empty columns?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //if yes, remove empty columns
+            if (emptyColumns == DialogResult.Yes) //remove columns
+            {
+                removeEmptyColumns(dataGridView1);
+            }
         }
 
         private void addColumns(string className, string columnName)
@@ -445,6 +432,42 @@ namespace BitWarden_JSON
                 return index;
             }
             return index;
+        }
+
+        private void removeEmptyColumns(DataGridView dgv)
+        {
+            //get all columns
+            var allColumns = dgv.Columns;
+            var allColumnsCount = allColumns.Count;
+            Stack <int> emptyColumns = new Stack<int>();
+
+            //go through each row for each column to determine if a value is in the column
+            //check each column for values
+            for (int i = 0; i < allColumnsCount; i++) 
+            {
+                //if a value is in the column, set the boolean
+                bool columnIsEmpty = true;
+                //check all rows to see if there is a value in the column
+                for (int j = 0; j < dgv.RowCount; j++)
+                {
+                    if (dgv.Rows[j].Cells[i].Value != null )
+                    {
+                        columnIsEmpty = false;
+                        break;
+                    }
+                }
+                if(columnIsEmpty == true) //all rows in the column were empty
+                {
+                    //record the index number of the column
+                    emptyColumns.Push(i);
+                }
+            }
+            //all columns have been reviewed
+            //remove empty columns
+            foreach (int empty in emptyColumns) 
+            {
+                dgv.Columns.RemoveAt(empty);
+            }
         }
     }
 }

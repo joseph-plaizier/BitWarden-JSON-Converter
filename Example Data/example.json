@@ -1,0 +1,109 @@
+{
+  "encrypted": false,
+  "folders": [],
+  "items": [
+    {
+      "passwordHistory": null,
+      "revisionDate": "2024-05-25T13:35:37.502Z",
+      "creationDate": "2024-05-25T13:35:37.502Z",
+      "deletedDate": null,
+      "id": "00a00a00-000a-0000-0a0a-a00a00a000a0",
+      "organizationId": null,
+      "folderId": null,
+      "type": 3,
+      "reprompt": 0,
+      "name": "Example Card",
+      "notes": "Example notes for card",
+      "favorite": false,
+      "card": {
+        "cardholderName": "Fluffy Bunny",
+        "brand": "Visa",
+        "number": "00000000000000000",
+        "expMonth": "1",
+        "expYear": "2025",
+        "code": "000"
+      },
+      "collectionIds": null
+    },
+    {
+      "passwordHistory": null,
+      "revisionDate": "2024-05-25T13:39:13.946Z",
+      "creationDate": "2024-05-25T13:39:13.946Z",
+      "deletedDate": null,
+      "id": "00b00a00-000a-0000-0a0a-a00a00a000a0",
+      "organizationId": null,
+      "folderId": null,
+      "type": 4,
+      "reprompt": 0,
+      "name": "Example Identity",
+      "notes": "Example Identity notes",
+      "favorite": false,
+      "identity": {
+        "title": "Dr",
+        "firstName": "Wolfgang",
+        "middleName": "Egor",
+        "lastName": "Frankenstein",
+        "address1": "123 Simple Ave",
+        "address2": null,
+        "address3": null,
+        "city": "Plaintown",
+        "state": "MI",
+        "postalCode": "11111",
+        "country": "USA",
+        "company": "MadeUp",
+        "email": "myexampleemail@example.com",
+        "phone": "0001112222",
+        "ssn": "000112222",
+        "username": "IMadeThis1818",
+        "passportNumber": "1234506789",
+        "licenseNumber": "9876054321"
+      },
+      "collectionIds": null
+    },
+    {
+      "passwordHistory": null,
+      "revisionDate": "2024-05-25T13:34:01.016Z",
+      "creationDate": "2024-05-25T13:34:01.016Z",
+      "deletedDate": null,
+      "id": "00c00a00-000a-0000-0a0a-a00a00a000a0",
+      "organizationId": null,
+      "folderId": null,
+      "type": 1,
+      "reprompt": 0,
+      "name": "Example Login",
+      "notes": "Some additional example notes",
+      "favorite": false,
+      "login": {
+        "fido2Credentials": [],
+        "uris": [
+          {
+            "match": null,
+            "uri": "example.org"
+          }
+        ],
+        "username": "FluffyBunnyCrew1965",
+        "password": "^JSErHAbsu5Z46",
+        "totp": null
+      },
+      "collectionIds": null
+    },
+    {
+      "passwordHistory": null,
+      "revisionDate": "2024-05-25T13:40:02.537Z",
+      "creationDate": "2024-05-25T13:40:02.537Z",
+      "deletedDate": null,
+      "id": "00d00a00-000a-0000-0a0a-a00a00a000a0",
+      "organizationId": null,
+      "folderId": null,
+      "type": 2,
+      "reprompt": 0,
+      "name": "Secure Note Example",
+      "notes": "note section for my secure note example",
+      "favorite": false,
+      "secureNote": {
+        "type": 0
+      },
+      "collectionIds": null
+    }
+  ]
+}
